@@ -28,7 +28,7 @@ jobs:
           sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
 
       - name: Run the script
-        run: python check_shifts.py
+        run: python script.py
         env:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
