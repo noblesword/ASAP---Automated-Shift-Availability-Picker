@@ -11,6 +11,12 @@ jobs:
   check-shifts:
     runs-on: ubuntu-latest
 
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest
+        ports:
+          - 4444:4444
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -22,13 +28,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-          sudo apt-get update
-          sudo apt-get install -y chromium-chromedriver
-          sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
+          pip install selenium
+          pip install webdriver-manager
 
       - name: Run the script
-        run: python script.py
         env:
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
+        run: python script.py
