@@ -32,7 +32,7 @@ def check_shifts():
     cells = shifts_table.find_elements(By.TAG_NAME, 'td')
     for cell in cells:
         color = cell.value_of_css_property('background-color')
-        if color == 'rgb(92,229,186)'':  # The RGB equivalent of 
+        if color == 'rgb(92,229,186)':  # The RGB equivalent of 
             print(cell.text)
 
 # Main function
