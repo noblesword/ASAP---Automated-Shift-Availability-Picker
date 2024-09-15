@@ -16,7 +16,7 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 
 # Function to log in
 def login(username, password):
-    driver.get('https://auth.campaustralia.com.au/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3De7b09064-3e0d-4244-8ef0-e6205a389429%26redirect_uri%3Dhttps%253A%252F%252Foneteam.campaustralia.com.au%252Fsignin-oidc%26response_mode%3Dform_post%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520profile%2520roles%2520offline_access%2520ocwteamapi_full_access%2520oneteamapi%2520one_team_app%2520documentmanager_readwrite%26state%3DOpenIdConnect.AuthenticationProperties%253DzuhMwVLVWMt-NR9Be3E08-vlTas5-vAVh02KDVmhaMn_JW0f5FJ9OEERYAtVANh5HUUCZ0BlbX137-9bopX2TJP9CiQOaOcly1e2lDBj2XlnYhCPbqZjIS5gJfjWHoAKEua1Ng6NYmfwbzZ5XIOtwrALdXy4ic3fnEvYDl8brmGXBkaDHuZ5-GzECAaZ9hXa4a60O4QU43fGcT-e0ScKLNbJrmBm5-qT4h2QjmSEH3MCsKNI18i5Ju3m5FpY2FUW%26nonce%3D638539732472325478.MTY5MzVmY2ItOTBiMy00MDJiLWJiMmItYzhjZDRlZjRjZDE5Y2QyYWYyMTUtYmJlMy00MmM3LWFmNjctZjYxMjZlMTgzYTE0%26x-client-SKU%3DID_NET461%26x-client-ver%3D5.6.0.0')  # Replace with the actual login URL
+    driver.get('https')
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, 'username'))).send_keys(username)
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, 'password'))).send_keys(password)
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, 'login_button'))).click()
